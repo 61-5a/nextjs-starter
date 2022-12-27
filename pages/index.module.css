@@ -1,0 +1,18 @@
+/* if mobile and tablet are seperate  */
+@media screen and (max-width: 767px) {
+  /* phone */
+}
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  /* tablet */
+}
+@media screen and (min-width: 1024px) {
+  /* desktop */
+}
+
+/* if mobile and tablet are same  */
+@media screen and (max-width: 1023px) {
+  /* phone */
+}
+@media screen and (min-width: 1024px) {
+  /* desktop */
+}
