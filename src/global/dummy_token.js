@@ -1,0 +1,3 @@
+var dummy_token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDhkYWViNDI1MmRjNjYwMDZlYmI4MiIsImlhdCI6MTY2OTc4NjMxMX0.vNSR12npNeUQRPCpFeWyii7qcLSe-me1BgWJbmG72fo";
+export default dummy_token;

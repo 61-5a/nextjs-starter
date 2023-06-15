@@ -1,6 +1,7 @@
 {
-  "name": "share",
+  "name": "aZ",
   "version": "0.1.0",
+  "author": "aZ <61-5a@pm.me>",
   "private": true,
   "scripts": {
     "dev": "next dev",

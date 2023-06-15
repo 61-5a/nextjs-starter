@@ -2,21 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
-
+} */
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-  }
+  } */
 }
-
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +22,84 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+body {
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* html {
+    color-scheme: dark;
+  } */
+}
+
+.clear {
+  clear: both;
+}
+.container {
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+@media only screen and (min-width: 576px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 0 8vw;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .container {
+    padding: 0 8vw;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    padding: 0 5vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    padding: 0 5vw;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  .container {
+    padding: 0 4vw;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .container {
+    padding: 0 4vw;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .container {
+    padding: 0 10px;
+  }
 }

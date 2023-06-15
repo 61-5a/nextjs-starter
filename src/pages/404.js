@@ -1,19 +1,12 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
-
-import useWindowDimensions from "@/global/window";
-import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
 
-import styles from "./index.module.css";
-import { StoreContext } from "@/global/StoreContext";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { height, width, mobile, desktop } = useWindowDimensions();
   const [Store] = useContext(StoreContext);
   const test = Store.test;
-  console.log(test);
 
   // console.log(height);
   // console.log(width);
@@ -45,7 +38,7 @@ export default function Home() {
           </a>
         </div>
       </main> */}
-      <div>aZ Starter</div>
+      404
     </>
   );
 }
