@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { StoreContextProvider } from "./_context/storeContext";
-import ApiLayout from "./_layout/apiLayout";
+import "./_styles/globals.css";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
-
-import "./_styles/globals.css";
 
 export const metadata: Metadata = {
   title: "PWA NextJS",
@@ -99,11 +96,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <StoreContextProvider>
-          <ApiLayout>{children}</ApiLayout>
-        </StoreContextProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

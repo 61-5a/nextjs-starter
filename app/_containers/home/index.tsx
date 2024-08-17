@@ -5,13 +5,16 @@ import { StoreContext } from "@/app/_context/storeContext";
 import { useQuery } from "@tanstack/react-query";
 import useWindowDimensions from "@/app/_hooks/window";
 import useUserAgent from "@/app/_hooks/userAgent";
+import { useHistoryStore } from "@/app/_store/history";
 
 export default function HomePage() {
-  const Store = useContext(StoreContext);
-  if (!Store) throw new Error("Store is not available in the context.");
-  const history: string[] = Store.history;
-  const remove: string = Store.remove;
-  console.log({ history, remove });
+  // const Store = useContext(StoreContext);
+  // if (!Store) throw new Error("Store is not available in the context.");
+  // const remove: string = Store.remove;
+
+  const history = useHistoryStore((state) => state.history);
+  console.log({ history });
+  // console.log({ history, remove });
 
   const { height, width, mobile, desktop } = useWindowDimensions();
   console.log({ height, width, mobile, desktop });
