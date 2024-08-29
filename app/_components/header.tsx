@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useHistoryStore } from "@/app/_store/history";
 
@@ -9,11 +10,17 @@ export default function Header() {
 
   useEffect(() => {
     setHistory(pathname);
-  }, [pathname]);
+  }, [pathname, setHistory]);
 
   return (
     <>
-      <div>Header</div>
+      <Link href={"/"}>home</Link>
+      <br />
+      <Link href={"/about"}>about</Link>
+      <br />
+      <Link href={"/login"}>login</Link>
+      <br />
+      <br />
     </>
   );
 }

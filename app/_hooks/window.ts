@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 interface WindowDimensions {
   width: number | null;
@@ -8,22 +8,19 @@ interface WindowDimensions {
 export default function useWindowDimensions() {
   const isClient = typeof window === "object";
 
-  const getWindowDimensions = (): WindowDimensions => {
-    return {
-      width: isClient ? window.innerWidth : null,
-      height: isClient ? window.innerHeight : null,
-    };
-  };
-
-  const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>(getWindowDimensions());
+  const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>({
+    width: isClient ? window.innerWidth : null,
+    height: isClient ? window.innerHeight : null,
+  });
 
   useEffect(() => {
-    if (!isClient) {
-      return;
-    }
+    if (!isClient) return;
 
     const handleResize = () => {
-      setWindowDimensions(getWindowDimensions());
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
     };
 
     window.addEventListener("resize", handleResize);
@@ -33,10 +30,13 @@ export default function useWindowDimensions() {
   const isMobile = windowDimensions.width && windowDimensions.width < 1024;
   const isDesktop = windowDimensions.width && windowDimensions.width >= 1024;
 
-  return {
-    width: windowDimensions.width,
-    height: windowDimensions.height,
-    mobile: isMobile,
-    desktop: isDesktop,
-  };
+  return useMemo(
+    () => ({
+      width: windowDimensions.width,
+      height: windowDimensions.height,
+      mobile: isMobile,
+      desktop: isDesktop,
+    }),
+    [windowDimensions.width, windowDimensions.height, isMobile, isDesktop]
+  );
 }

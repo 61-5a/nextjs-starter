@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import ReactQueryProvider from "./_providers/reactQueryProvider";
+
 import "./_styles/globals.css";
 
 import { Inter } from "next/font/google";
@@ -10,7 +12,6 @@ export const metadata: Metadata = {
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
-  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#fff" }],
   authors: [
     {
       name: "aZ",
@@ -85,6 +86,7 @@ export const viewport: Viewport = {
   minimumScale: 1,
   maximumScale: 1,
   userScalable: false,
+  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#fff" }],
   // Also supported by less commonly used
   // interactiveWidget: 'resizes-visual',
 };
@@ -96,7 +98,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ReactQueryProvider>{children}</ReactQueryProvider>
+      </body>
     </html>
   );
 }
