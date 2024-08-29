@@ -1,4 +1,3 @@
-"use client";
 import { useQuery } from "@tanstack/react-query";
 import useWindowDimensions from "@/app/_hooks/window";
 import useUserAgent from "@/app/_hooks/userAgent";
@@ -7,6 +6,8 @@ import Header from "@/app/_components/header";
 import { useHistoryStore } from "@/app/_store/history";
 
 export default function HomePage() {
+  console.log("home");
+
   // const history = useHistoryStore((state) => state.history);
   // console.log("home", { history });
 

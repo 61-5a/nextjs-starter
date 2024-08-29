@@ -12,6 +12,9 @@ export default function Header() {
     setHistory(pathname);
   }, [pathname, setHistory]);
 
+  const history = useHistoryStore((state) => state.history);
+  console.log("header", { history });
+
   return (
     <>
       <Link href={"/"}>home</Link>
