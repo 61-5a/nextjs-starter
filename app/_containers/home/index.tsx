@@ -1,9 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import useWindowDimensions from "@/app/_hooks/window";
-import useUserAgent from "@/app/_hooks/userAgent";
+// import { useQuery } from "@tanstack/react-query";
+// import useWindowDimensions from "@/app/_hooks/window";
+// import useUserAgent from "@/app/_hooks/userAgent";
 
 import Header from "@/app/_components/header";
-import { useHistoryStore } from "@/app/_store/history";
+// import { useHistoryStore } from "@/app/_store/history";
 
 export default function HomePage() {
   console.log("home");
@@ -33,6 +33,10 @@ export default function HomePage() {
     <>
       <Header />
       <div>home</div>
+
+      {/* <div className="grid font-[family-name:var(--font-geist-sans)]">
+        <div className="mb-2 font-[family-name:var(--font-geist-mono)]">dummy</div>
+      </div> */}
     </>
   );
 }

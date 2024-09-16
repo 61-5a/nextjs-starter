@@ -1,10 +1,19 @@
+import localFont from "next/font/local";
 import type { Metadata, Viewport } from "next";
 import ReactQueryProvider from "./_providers/reactQueryProvider";
 
 import "./_styles/globals.css";
 
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = localFont({
+  src: "./_fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./_fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "PWA NextJS",
@@ -98,7 +107,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>
